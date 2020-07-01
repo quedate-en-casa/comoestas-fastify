@@ -1,0 +1,22 @@
+{
+  "name": "comoestas-fastify",
+  "version": "1.0.0",
+  "description": "Node.js REST layer for \"Como Estas\"",
+  "main": "server.js",
+  "repository": "https://github.com/quedate-en-casa/comoestas-fastify.git",
+  "author": "Patricio Ascencio <paascencio@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "dev": "pm2 --no-daemon start dev.config.js",
+    "down": "pm2 stop dev.config.js",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "pm2": "^4.4.0",
+    "standard": "^14.3.4"
+  },
+  "dependencies": {
+    "fastify": "^2.15.1"
+  }
+}
