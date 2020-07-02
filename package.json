@@ -10,11 +10,13 @@
   "scripts": {
     "dev": "pm2 --no-daemon start dev.config.js",
     "down": "pm2 stop dev.config.js",
-    "test": "jest"
+    "test": "jest --detectOpenHandles"
   },
   "devDependencies": {
     "pm2": "^4.4.0",
-    "standard": "^14.3.4"
+    "request": "^2.88.2",
+    "standard": "^14.3.4",
+    "testcontainers": "^2.14.0"
   },
   "dependencies": {
     "fastify": "^2.15.1"

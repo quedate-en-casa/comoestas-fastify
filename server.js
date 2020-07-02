@@ -1,9 +1,7 @@
-const fastify = require('fastify')({ logger: true })
-
-fastify.get('/', async (request, reply) => {
-  return { hello: 'world' }
+const app = require('./app')
+const fastify = app({
+  uri: `mongodb://${process.env.MONGODB_HOST}:${process.env.MONGODB_PORT}/${process.env.MONGODB_NAME}`
 })
-
 const start = async () => {
   try {
     await fastify.listen(3000)
