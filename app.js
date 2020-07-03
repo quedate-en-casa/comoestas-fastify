@@ -53,6 +53,18 @@ module.exports = (settings) => {
       })
   })
 
+  fastify.post('/record/:rut', (request, reply) => {
+    recordResource
+      .insert(buildResourceRequest(request))
+      .then(response => {
+        if (response.headers) {
+          reply.headers(response.headers)
+        }
+        reply.code(response.statusCode)
+        reply.send(response.data)
+      })
+  })
+
   fastify.get('/doctor', (request, reply) => {
     doctorResource
       .getByRut(buildResourceRequest(request))

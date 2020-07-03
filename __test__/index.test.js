@@ -112,6 +112,31 @@ describe('Rest API test suite', () => {
       done()
     })
   }, TIMEOUT)
+  test('Create record with rut path parameter', (done) => {
+    request({
+      method: 'POST',
+      url: `http://localhost:${fastify.server.address().port}/record/26128425-1`,
+      json: true,
+      body: {
+        doctor: 'Juan Perez',
+        doctorComments: 'Se esta mejorando de a poco',
+        hospital: 'Sotero de rio',
+        rut: '26128425-1',
+        status: 'No estable'
+      }
+    }, (err, response, data) => {
+      if (err) {
+        expect(err).toBeNull()
+      }
+      expect(response).not.toBeNull()
+      expect(response).not.toBeUndefined()
+      expect(response.statusCode).toBe(201)
+      expect(data).not.toBeNull()
+      expect(data).not.toBeUndefined()
+      expect(data.rut).toBe('26128425-1')
+      done()
+    })
+  }, TIMEOUT)
   test('Get doctor by rut in query string', (done) => {
     const rut = '1-1'
     request({

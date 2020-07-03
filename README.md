@@ -42,3 +42,5 @@ To check if your local environment work's run `yarn test`.
 - [ ] Refactor integrations test
 - [ ] Add continous integration
 - [ ] Add more documentation
+- [ ] Format output dates
+- [ ] Replace `request` package with `fastify.inject` method in integration tests and remove them from dev dependencies.
