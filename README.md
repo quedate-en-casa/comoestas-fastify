@@ -37,6 +37,7 @@ To check if your local environment work's run `yarn test`.
 ## TODO
 
 - [ ] Add validations
+- [ ] Add security
 - [ ] Refactor fastify routes configuration
 - [ ] Refactor integrations test
 - [ ] Add continous integration
